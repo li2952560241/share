@@ -108,4 +108,20 @@ public class StationServiceImpl extends ServiceImpl<StationMapper, Station>
         cabinetService.updateById(cabinet);
         return 1;
     }
+
+    @Override
+    public void updateData() {
+        List<Station> stationList = this.list();
+        for (Station station : stationList) {
+            StationLocation stationLocation = stationLocationRepository.getByStationId(station.getId());
+            if(stationLocation == null) {
+                stationLocation = new StationLocation();
+                stationLocation.setId(ObjectId.get().toString());
+                stationLocation.setStationId(station.getId());
+                stationLocation.setLocation(new GeoJsonPoint(station.getLongitude().doubleValue(), station.getLatitude().doubleValue()));
+                stationLocation.setCreateTime(new Date());
+                stationLocationRepository.save(stationLocation);
+            }
+        }
+    }
 }
