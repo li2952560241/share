@@ -288,6 +288,7 @@
         <module>share-modules</module>
         <module>share-api</module>
         <module>share-common</module>
+        <module>share-modules/share-device</module>
     </modules>
     <packaging>pom</packaging>
 
