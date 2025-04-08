@@ -8,6 +8,9 @@ import java.util.List;
 public interface IDeviceService
 {
 
-    List<StationVo> nearbyStation(String latitude, String longitude, Integer radius);
+    //获取附近站点信息列表
+    List<StationVo> nearbyStation(String latitude, String longitude);
 
+    // 根据id获取站点信息
+    StationVo getStation(Long id, String latitude, String longitude);
 }

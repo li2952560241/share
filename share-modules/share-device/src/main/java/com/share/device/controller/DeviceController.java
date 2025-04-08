@@ -27,6 +27,6 @@ public class DeviceController extends BaseController {
     @GetMapping("/nearbyStationList/{latitude}/{longitude}")
     public AjaxResult nearbyStation(@PathVariable String latitude, @PathVariable String longitude)
     {
-        return success(deviceService.nearbyStation(latitude, longitude, DeviceConstants.SEARCH_PC_RADIUS));
+        return success(deviceService.nearbyStation(latitude, longitude));
     }
 }

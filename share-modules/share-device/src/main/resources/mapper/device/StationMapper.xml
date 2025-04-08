@@ -30,4 +30,17 @@
         </where>
     </select>
 
+    <select id="selectStations" resultType="Station">
+        SELECT id, name, image_url, business_hours, longitude, latitude, province_code, city_code, district_code, address, full_address, head_name, head_phone, cabinet_id, fee_rule_id, status, create_by, create_time, update_by, update_time, remark, del_flag
+        FROM station
+        WHERE del_flag = '0'
+        <if test="idList != null and idList.size > 0">
+            AND id IN
+            <foreach collection="idList" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </if>
+    </select>
+
+
 </mapper>

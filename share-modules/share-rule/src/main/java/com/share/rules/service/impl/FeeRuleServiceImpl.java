@@ -2,7 +2,7 @@ package com.share.rules.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.share.rules.domain.FeeRule;
+import com.share.rule.domain.FeeRule;
 import com.share.rules.mapper.FeeRuleMapper;
 import com.share.rules.service.IFeeRuleService;
 import lombok.extern.slf4j.Slf4j;
