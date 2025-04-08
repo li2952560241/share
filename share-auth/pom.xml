@@ -52,6 +52,13 @@
             <artifactId>share-common-security</artifactId>
         </dependency>
 
+<!--        微信登录的远程调用-->
+        <dependency>
+            <groupId>com.share</groupId>
+            <artifactId>share-api-user</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

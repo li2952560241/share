@@ -290,6 +290,7 @@
         <module>share-common</module>
         <module>share-modules/share-device</module>
         <module>share-modules/share-rule</module>
+        <module>share-modules/share-user</module>
     </modules>
     <packaging>pom</packaging>
 

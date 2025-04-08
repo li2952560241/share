@@ -3,8 +3,7 @@ package com.share.device.service.impl;
 import com.alibaba.fastjson2.JSONObject;
 import com.share.common.core.exception.ServiceException;
 import com.share.device.service.IMapService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value; // 修正导入路径
+import org.springframework.beans.factory.annotation.*; // 修正导入路径
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -21,7 +20,7 @@ public class MapServiceImpl implements IMapService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${tencent.map.key}") // 使用正确的注解
+   @Value("${tencent.map.key:2}") // 使用正确的注解
     private String key;
 
     @Override
