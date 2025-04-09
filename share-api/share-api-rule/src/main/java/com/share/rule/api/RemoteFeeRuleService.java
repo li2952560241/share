@@ -24,6 +24,7 @@ import java.util.List;
 public interface RemoteFeeRuleService
 {
 
+    //
     @PostMapping("/feeRule/calculateOrderFee")
     public R<FeeRuleResponseVo> calculateOrderFee(@RequestBody FeeRuleRequestForm feeRuleRequestForm);
 

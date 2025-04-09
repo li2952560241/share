@@ -12,6 +12,7 @@
         <module>share-api-system</module>
         <module>share-api-user</module>
         <module>share-api-rule</module>
+        <module>share-api-order</module>
     </modules>
 
     <artifactId>share-api</artifactId>

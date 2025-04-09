@@ -56,6 +56,7 @@ public class PowerBankServiceImpl extends ServiceImpl<PowerBankMapper, PowerBank
         return 0;
     }
 
+    //根据编号查询充电宝信息
     @Override
     public PowerBank getByPowerBankNo(String powerBankNo) {
         return powerBankMapper.selectOne(new LambdaQueryWrapper<PowerBank>().eq(PowerBank::getPowerBankNo, powerBankNo));

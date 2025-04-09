@@ -43,20 +43,25 @@ public class UserInfoApiController extends BaseController {
         BeanUtils.copyProperties(userInfo, userInfoVo);
         return success(userInfoVo);
     }
-//
-//    @Operation(summary = "是否免押金")
-//    @RequiresLogin
-//    @GetMapping("/isFreeDeposit")
-//    public AjaxResult isFreeDeposit() {
-//        return success(userInfoService.isFreeDeposit());
-//    }
-//
-//    @Operation(summary = "获取用户详细信息")
-//    @GetMapping(value = "/getUserInfo/{id}")
-//    public R<UserInfo> getInfo(@PathVariable("id") Long id) {
-//        UserInfo userInfo = userInfoService.getById(id);
-//        return R.ok(userInfo);
-//    }
+
+    /**
+     * 是否免押金
+     * @return
+     */
+    @Operation(summary = "是否免押金")
+    @RequiresLogin
+    @GetMapping("/isFreeDeposit")
+    public AjaxResult isFreeDeposit() {
+        return success(userInfoService.isFreeDeposit());
+    }
+
+    //远程调用：获取用户详细信息
+    @Operation(summary = "获取用户详细信息")
+    @GetMapping(value = "/getUserInfo/{id}")
+    public R<UserInfo> getInfo(@PathVariable("id") Long id) {
+        UserInfo userInfo = userInfoService.getById(id);
+        return R.ok(userInfo);
+    }
 //
 //    //统计2024年每个月注册人数
 //    //远程调用：统计用户注册数据

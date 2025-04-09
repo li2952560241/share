@@ -6,6 +6,7 @@ import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.share.common.core.context.SecurityContextHolder;
 import com.share.user.domain.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,6 +69,22 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * 是否免押金
+     * @return
+     */
+    @Override
+
+    public Boolean isFreeDeposit() {
+        //微信支付分
+        //https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_1&index=2
+        // 默认免押金，模拟实现
+        UserInfo userInfo = userInfoMapper.selectById(SecurityContextHolder.getUserId());
+        userInfo.setDepositStatus("1");
+        this.updateById(userInfo);
+        return true;
     }
 
 }

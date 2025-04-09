@@ -15,5 +15,6 @@ public interface IPowerBankService extends IService<PowerBank> {
     //修改
     int updatePowerBank(PowerBank powerBank);
 
+    //根据编号查询充电宝信息
     PowerBank getByPowerBankNo(String powerBankNo);
 }

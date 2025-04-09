@@ -44,6 +44,7 @@ public class CabinetServiceImpl extends ServiceImpl<CabinetMapper, Cabinet>
         return list;
     }
 
+    //根据编号查询
     @Override
     public Cabinet getBtCabinetNo(String cabinetNo) {
         return cabinetMapper.selectOne(new LambdaQueryWrapper<Cabinet>().eq(Cabinet::getCabinetNo, cabinetNo));

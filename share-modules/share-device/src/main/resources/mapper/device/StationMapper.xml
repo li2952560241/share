@@ -30,7 +30,7 @@
         </where>
     </select>
 
-    <select id="selectStations" resultType="Station">
+    <select id="selectStations" resultType="com.share.device.domain.Station">
         SELECT id, name, image_url, business_hours, longitude, latitude, province_code, city_code, district_code, address, full_address, head_name, head_phone, cabinet_id, fee_rule_id, status, create_by, create_time, update_by, update_time, remark, del_flag
         FROM station
         WHERE del_flag = '0'

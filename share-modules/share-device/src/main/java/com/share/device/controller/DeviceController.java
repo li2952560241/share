@@ -29,4 +29,5 @@ public class DeviceController extends BaseController {
     {
         return success(deviceService.nearbyStation(latitude, longitude));
     }
+
 }

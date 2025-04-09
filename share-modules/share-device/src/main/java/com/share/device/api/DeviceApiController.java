@@ -4,6 +4,7 @@ import com.share.common.core.web.controller.BaseController;
 import com.share.common.core.web.domain.AjaxResult;
 import com.share.common.security.annotation.RequiresLogin;
 //import com.share.device.domain.ScanChargeVo;
+import com.share.device.domain.ScanChargeVo;
 import com.share.device.domain.StationVo;
 import com.share.device.service.IDeviceService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -25,13 +26,13 @@ public class DeviceApiController extends BaseController {
     private IDeviceService deviceService;
 
     //扫码充电接口
-//    @Operation(summary = "扫码充电")
-//    @RequiresLogin
-//    @GetMapping("scanCharge/{cabinetNo}")
-//    public AjaxResult scanCharge(@PathVariable String cabinetNo) {
-//        ScanChargeVo scanChargeVo = deviceService.scanCharge(cabinetNo);
-//        return success(scanChargeVo);
-//    }
+    @Operation(summary = "扫码充电")
+    @RequiresLogin
+    @GetMapping("scanCharge/{cabinetNo}")
+    public AjaxResult scanCharge(@PathVariable String cabinetNo) {
+        ScanChargeVo scanChargeVo = deviceService.scanCharge(cabinetNo);
+        return success(scanChargeVo);
+    }
 
     @Operation(summary = "根据经纬度搜索附近门店（站点）")
     @RequiresLogin

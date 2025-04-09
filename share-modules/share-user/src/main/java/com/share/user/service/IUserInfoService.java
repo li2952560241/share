@@ -24,4 +24,6 @@ public interface IUserInfoService extends IService<UserInfo>
 
     ////微信授权登录-远程调用
     UserInfo wxLogin(String code);
+
+    Boolean isFreeDeposit();
 }

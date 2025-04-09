@@ -1,5 +1,6 @@
 package com.share.device.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.share.device.domain.Cabinet;
 import com.share.device.domain.Station;
@@ -123,5 +124,10 @@ public class StationServiceImpl extends ServiceImpl<StationMapper, Station>
                 stationLocationRepository.save(stationLocation);
             }
         }
+    }
+
+    @Override
+    public Station getByCabinetId(Long cabinetId) {
+        return stationMapper.selectOne(new LambdaQueryWrapper<Station>().eq(Station::getCabinetId, cabinetId));
     }
 }
