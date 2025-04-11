@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/nearbystores/nearbystores",
+    "pages/detail/detail",
+    "pages/center/center",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/verify/verify"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小谷充电",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序接口的位置展示"
+    }
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,1 @@
+<view class="verifyContainer"><view class="content"><view class="safe"><image class="safeImg" src="/static/images/安全.png"></image><text class="safeText">信息安全有保障</text></view><view class="verifyText">请先进行验证可借充电宝</view><button class="btn" bindtap="{{a}}"><view class="top">免押金使用</view><view class="bottom">(微信支付分400分及以上免押金)</view></button></view></view>
