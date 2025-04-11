@@ -25,8 +25,10 @@ public interface IOrderInfoService extends IService<OrderInfo> {
     // 结束订单
     void endOrder(EndOrderVo endOrderVo);
 
+    // 根据用户id查询订单列表
     List<OrderInfo> selectOrderListByUserId(Long userId);
 
+    // 根据订单id查询订单信息
     OrderInfo selectOrderInfoById(Long id);
 
     OrderInfo getByOrderNo(String orderNo);

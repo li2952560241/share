@@ -250,6 +250,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
                     orderInfo.setDeductAmount(new BigDecimal(0));
                     orderInfo.setRealAmount(responseVo.getTotalAmount());
                 } else {
+                    //充电时长为0
                     orderInfo.setDuration(0);
                     orderInfo.setTotalAmount(new BigDecimal(0));
                     orderInfo.setDeductAmount(new BigDecimal(0));
