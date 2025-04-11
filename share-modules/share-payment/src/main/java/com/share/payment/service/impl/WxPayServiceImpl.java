@@ -88,8 +88,10 @@ public class WxPayServiceImpl implements IWxPayService {
         return wxPrepayVo;
     }
 
+    //微信回调
     @Override
     public void wxnotify(HttpServletRequest request) {
+        //1.获取请求头信息
         String wechatPaySerial = request.getHeader("Wechatpay-Serial");
         String nonce = request.getHeader("Wechatpay-Nonce");
         String timestamp = request.getHeader("Wechatpay-Timestamp");

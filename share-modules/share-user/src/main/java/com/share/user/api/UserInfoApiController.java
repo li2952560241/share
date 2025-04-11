@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/userInfo")
 public class UserInfoApiController extends BaseController {
@@ -62,15 +64,14 @@ public class UserInfoApiController extends BaseController {
         UserInfo userInfo = userInfoService.getById(id);
         return R.ok(userInfo);
     }
-//
-//    //统计2024年每个月注册人数
-//    //远程调用：统计用户注册数据
-//    @GetMapping("/getUserCount")
-//    public R getUserCount() {
-//        //[150, 230, 224, 218, 135, 147, 260]
-//        //['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-//        Map<String,Object> map = userInfoService.getUserCount();
-//        return R.ok(map);
-//    }
+    //统计2024年每个月注册人数
+    //远程调用：统计用户注册数据
+    @GetMapping("/getUserCount")
+    public R getUserCount() {
+        //[150, 230, 224, 218, 135, 147, 260]
+        //['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        Map<String,Object> map = userInfoService.getUserCount();
+        return R.ok(map);
+    }
 
 }

@@ -17,6 +17,7 @@
         <module>share-rule</module>
         <module>share-order</module>
         <module>share-payment</module>
+        <module>share-stastics</module>
     </modules>
 
     <artifactId>share-modules</artifactId>

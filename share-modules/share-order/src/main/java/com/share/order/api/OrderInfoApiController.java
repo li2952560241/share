@@ -84,6 +84,7 @@ public class OrderInfoApiController extends BaseController
         return R.ok(orderInfo);
     }
 
+
     //远程调用：订单报表
     //传递过来sql语句，根据sql语句查询数据库得到报表数据
     @PostMapping("/getOrderCount")

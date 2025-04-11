@@ -3,6 +3,7 @@ package com.share.user.mapper;
 import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.share.user.domain.UserCountVo;
 import com.share.user.domain.UserInfo;
 
 /**
@@ -22,4 +23,5 @@ public interface UserInfoMapper extends BaseMapper<UserInfo>
      */
     public List<UserInfo> selectUserInfoList(UserInfo userInfo);
 
+    List<UserCountVo> selectUserCount();
 }

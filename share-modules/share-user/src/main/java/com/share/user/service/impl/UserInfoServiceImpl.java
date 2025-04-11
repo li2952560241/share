@@ -1,17 +1,23 @@
 package com.share.user.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.share.common.core.context.SecurityContextHolder;
+import com.share.common.core.domain.R;
+import com.share.user.domain.UserCountVo;
 import com.share.user.domain.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.share.user.mapper.UserInfoMapper;
 import com.share.user.service.IUserInfoService;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * 用户Service业务层处理
@@ -85,6 +91,28 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         userInfo.setDepositStatus("1");
         this.updateById(userInfo);
         return true;
+    }
+
+    //统计2024年每个月注册人数
+    //远程调用：统计用户注册数据
+    @Override
+    public Map<String, Object> getUserCount() {
+        List<UserCountVo> list = baseMapper.selectUserCount();
+
+        Map<String,Object> map = new HashMap<>();
+        //创建两个list集合，一个对应所有日期，另外一个对应所有数据
+        // list -- json数组 []
+        //获取所有日期
+        List<String> dateList =
+                list.stream().map(UserCountVo::getRegisterDate).collect(Collectors.toList());
+        //获取所有数据
+        List<Integer> countList =
+                list.stream().map(UserCountVo::getCount).collect(Collectors.toList());
+
+        //放到map集合，返回
+        map.put("dateList",dateList);
+        map.put("countList",countList);
+        return map;
     }
 
 }
