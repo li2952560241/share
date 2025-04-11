@@ -16,6 +16,7 @@
         <module>share-user</module>
         <module>share-rule</module>
         <module>share-order</module>
+        <module>share-payment</module>
     </modules>
 
     <artifactId>share-modules</artifactId>

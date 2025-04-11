@@ -27,6 +27,7 @@ public interface RemoteOrderInfoService
     @GetMapping("/orderInfo/getNoFinishOrder/{userId}")
     public R<OrderInfo> getNoFinishOrder(@PathVariable("userId") Long userId);
 
+    // 根据订单号获取订单信息
     @GetMapping("/orderInfo/getByOrderNo/{orderNo}")
     public R<OrderInfo> getByOrderNo(@PathVariable("orderNo") String orderNo);
 
