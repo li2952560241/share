@@ -21,6 +21,7 @@ import com.share.common.core.web.page.TableDataInfo;
  */
 public class BaseController
 {
+    // 日志对象
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**

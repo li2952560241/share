@@ -19,6 +19,11 @@ public class RegionController extends BaseController {
     @Autowired
     private IRegionService regionService;
 
+    /**
+     * 根据上级code获取下级数据列表
+     * @param code 上级code
+     * @return List<Region> 地区信息集合
+     */
     @Operation(summary = "根据上级code获取下级数据列表")
     @GetMapping(value = "/treeSelect/{code}")
     public AjaxResult treeSelect(@PathVariable String code) {

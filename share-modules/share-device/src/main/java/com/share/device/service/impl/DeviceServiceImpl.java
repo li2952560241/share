@@ -83,7 +83,7 @@ public class DeviceServiceImpl implements IDeviceService {
                 new GeoJsonPoint(Double.parseDouble(longitude),
                         Double.parseDouble(latitude));
 
-        //设置查询半径，比如查询50公里
+        //设置查询半径，比如查询50公里 前面是距离，后面是单位
         Distance distance = new Distance(50, Metrics.KILOMETERS);
 
         //画圆

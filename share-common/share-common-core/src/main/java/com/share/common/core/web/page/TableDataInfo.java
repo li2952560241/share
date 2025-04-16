@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class TableDataInfo implements Serializable
 {
+    //它的功能是为实现Serializable接口的类指定序列化版本号，用于在反序列化时验证类的版本一致性。
     private static final long serialVersionUID = 1L;
 
     /** 总记录数 */

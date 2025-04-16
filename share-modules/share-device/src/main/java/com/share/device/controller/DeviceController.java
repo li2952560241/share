@@ -23,6 +23,12 @@ public class DeviceController extends BaseController {
     @Autowired
     private IDeviceService deviceService;
 
+    /**
+     * 获取附近站点信息列表
+     * @param latitude 纬度
+     * @param longitude 经度
+     * @return 返回附近站点信息列表
+     */
     @Operation(summary = "获取附近站点信息列表")
     @GetMapping("/nearbyStationList/{latitude}/{longitude}")
     public AjaxResult nearbyStation(@PathVariable String latitude, @PathVariable String longitude)

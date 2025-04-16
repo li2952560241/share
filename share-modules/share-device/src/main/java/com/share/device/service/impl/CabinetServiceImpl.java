@@ -28,17 +28,28 @@ public class CabinetServiceImpl extends ServiceImpl<CabinetMapper, Cabinet>
 
     @Autowired
     private CabinetSlotMapper cabinetSlotMapper;
-    //分页查询
+
+    /**
+     * 查询充电宝柜机列表 (分页)
+     * @param cabinet 充电宝柜机
+     * @return 充电宝柜机集合
+     */
     @Override
     public List<Cabinet> selectListCabinet(Cabinet cabinet) {
         return cabinetMapper.selectListCabinet(cabinet);
     }
 
-    //未使用柜机
+    /**
+     * 搜索未使用柜机
+     * @param keyword 关键字
+     * @return 充电宝柜机集合
+     */
     @Override
     public List<Cabinet> searchNoUseList(String keyword) {
         LambdaQueryWrapper<Cabinet> wrapper = new LambdaQueryWrapper<>();
+        // 关键字模糊查询
         wrapper.like(Cabinet::getCabinetNo,keyword);
+        // 状态为空闲
         wrapper.eq(Cabinet::getStatus,0);
         List<Cabinet> list = cabinetMapper.selectList(wrapper);
         return list;

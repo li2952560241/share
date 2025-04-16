@@ -15,8 +15,6 @@ import java.util.List;
 public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region>
         implements IRegionService {
 
-//    @Autowired
-//    private RegionMapper regionMapper;
 
     //根据上级code获取下级数据列表
     @Override

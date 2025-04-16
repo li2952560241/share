@@ -11,7 +11,6 @@
     <modules>
         <module>share-system</module>
         <module>share-gen</module>
-        <module>share-job</module>
         <module>share-file</module>
         <module>share-user</module>
         <module>share-rule</module>

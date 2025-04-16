@@ -23,7 +23,11 @@ public class PowerBankController extends BaseController {
     @Autowired
     private IPowerBankService powerBankService;
 
-    //分页查询
+    /**
+     *  查询充电宝列表 （分页）
+     * @param powerBank 充电宝对象
+     * @return TableDataInfo充电宝列表（分页）
+     */
     @Operation(summary = "查询充电宝列表")
     @GetMapping("/list")
     public TableDataInfo list(PowerBank powerBank) {
@@ -34,7 +38,11 @@ public class PowerBankController extends BaseController {
         return getDataTable(list);
     }
 
-    //根据id查询详情数据
+    /**
+     * 根据id查询详情数据
+     * @param id 查询的条件id
+     * @return powerBank 充电宝对象
+     */
     @Operation(summary = "获取充电宝详细信息")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)

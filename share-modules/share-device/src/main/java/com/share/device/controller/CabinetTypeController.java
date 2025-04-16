@@ -24,6 +24,8 @@ public class CabinetTypeController extends BaseController
 
     /**
      * 查询柜机类型列表
+     * @param cabinetType 柜机类型
+     * @return 柜机类型集合
      */
     @Operation(summary = "查询柜机类型列表")
     @GetMapping("/list")
@@ -36,8 +38,8 @@ public class CabinetTypeController extends BaseController
 
     /**
      *  获取柜机类型详细信息
-     * @param id
-     * @return
+     * @param id 柜机类型id
+     * @return 柜机类型信息
      */
     @Operation(summary = "获取柜机类型详细信息")
     @GetMapping(value = "/{id}")
@@ -48,8 +50,8 @@ public class CabinetTypeController extends BaseController
 
     /**
      *  新增柜机类型
-     * @param cabinetType
-     * @return
+     * @param cabinetType  柜机类型
+     * @return 是否成功
      */
     @Operation(summary = "新增柜机类型")
     @PostMapping
@@ -60,8 +62,8 @@ public class CabinetTypeController extends BaseController
 
     /**
      *  修改柜机类型
-     * @param cabinetType
-     * @return
+     * @param cabinetType 柜机类型
+     * @return 是否成功
      */
     @Operation(summary = "修改柜机类型")
     @PutMapping
@@ -71,8 +73,8 @@ public class CabinetTypeController extends BaseController
     }
     /**
      *  删除柜机类型
-     * @param ids
-     * @return
+     * @param ids 需要删除的id集合
+     * @return 是否成功
      */
     @Operation(summary = "删除柜机类型")
     @DeleteMapping("/{ids}")
@@ -83,7 +85,7 @@ public class CabinetTypeController extends BaseController
 
     /**
      * 查询全部柜机类型列表
-     * @return
+     * @return cabinetType集合
      */
     @Operation(summary = "查询全部柜机类型列表")
     @GetMapping("/getCabinetTypeList")

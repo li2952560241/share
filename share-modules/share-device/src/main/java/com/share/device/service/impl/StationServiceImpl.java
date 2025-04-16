@@ -64,6 +64,7 @@ public class StationServiceImpl extends ServiceImpl<StationMapper, Station>
         station.setFullAddress(provinceName + cityName + districtName + station.getAddress());
         int rows = stationMapper.insert(station);
 
+        //同步站点位置信息到MongoDB
         StationLocation stationLocation = new StationLocation();
         stationLocation.setId(ObjectId.get().toString());
         stationLocation.setStationId(station.getId());
@@ -83,6 +84,7 @@ public class StationServiceImpl extends ServiceImpl<StationMapper, Station>
         station.setFullAddress(provinceName + cityName + districtName + station.getAddress());
         int rows = stationMapper.updateById(station);
 
+        //同步站点位置信息到MongoDB
         StationLocation stationLocation = stationLocationRepository.getByStationId(station.getId());
         stationLocation.setLocation(new GeoJsonPoint(station.getLongitude().doubleValue(), station.getLatitude().doubleValue()));
         stationLocationRepository.save(stationLocation);
@@ -110,6 +112,7 @@ public class StationServiceImpl extends ServiceImpl<StationMapper, Station>
         return 1;
     }
 
+    //同步数据到MongoDB
     @Override
     public void updateData() {
         List<Station> stationList = this.list();
